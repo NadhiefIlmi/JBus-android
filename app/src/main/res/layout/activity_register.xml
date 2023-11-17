@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="3sp"
+    android:background="#FFFFFF"
+    android:backgroundTint="#FEFE00"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".RegisterActivity"> <!-- Add this line -->
+    <!-- Fill the linear layout with some components-->
+
+    <TextView
+        android:id="@+id/title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="monospace"
+        android:gravity="center"
+        android:paddingBottom="30sp"
+        android:text="🚍"
+        android:textColor="#6200EA"
+        android:textSize="96sp"
+        android:textStyle="normal|bold"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15sp"
+        android:layout_marginTop="10sp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:gravity="center|left"
+        android:paddingBottom="10sp"
+        android:text="Register your account"
+        android:textColor="#173460"
+        android:textSize="34sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15sp"
+        android:layout_marginBottom="30dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:gravity="center|left"
+        android:text="Input your username, email, and password"
+        android:textColor="#173460"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+
+
+    <LinearLayout
+        android:id="@+id/register_form"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="36dp"
+        android:background="#00F4F6FB"
+        android:fadingEdge="horizontal"
+        android:orientation="vertical">
+        android:fontFamily="sans-serif-smallcaps"
+
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif-smallcaps"
+            android:hint="username"
+            android:inputType="text"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="sans-serif-smallcaps"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:fontFamily="sans-serif-smallcaps"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/register_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+            android:backgroundTint="#FF4081"
+            android:fontFamily="monospace"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="12dp"
+            android:text="REGISTER NOW"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:cornerRadius="10dp" />
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="3sp"
+    android:background="#FFFFFF"
+    android:backgroundTint="#FEFE00"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".RegisterActivity"> <!-- Add this line -->
+    <!-- Fill the linear layout with some components-->
+
+    <TextView
+        android:id="@+id/title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="monospace"
+        android:gravity="center"
+        android:paddingBottom="30sp"
+        android:text="🚍"
+        android:textColor="#6200EA"
+        android:textSize="200sp"
+        android:textStyle="normal|bold"
+        android:visibility="visible" />
+
+
+</LinearLayout>

@@ -14,7 +14,7 @@
         android:id="@+id/text_view_5"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:fontFamily="serif"
+        android:fontFamily="monospace"
         android:gravity="center"
         android:text="Welcome to"
         android:textColor="#FF4081"
