@@ -1,14 +1,14 @@
 package com.MuhammadNadhifFasichulIlmiJBusRD.jbus_android;
 
-import android.os.Bundle;
-
 import androidx.appcompat.app.AppCompatActivity;
 
-public class BusView extends AppCompatActivity {
+import android.os.Bundle;
+
+public class BusScheduleActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.bus_view);
+        setContentView(R.layout.activity_bus_schedule);
     }
 }

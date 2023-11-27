@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.MuhammadNadhifFasichulIlmiJBusRD.jbus_android.model.Bus;
 
 import java.util.List;
+
 public class BusArrayAdapter extends ArrayAdapter<Bus> {
 
     public BusArrayAdapter(Context context, List<Bus> objects) {

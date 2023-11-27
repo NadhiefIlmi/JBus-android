@@ -5,11 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginLeft="3sp"
-    android:background="#FFFFFF"
+    android:background="#FEFE00"
     android:backgroundTint="#FEFE00"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".AboutMeActivity">
+    tools:context=".AboutMeActivity"> <!-- Add this line -->
+    <!-- Fill the linear layout with some components-->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,10 +28,8 @@
             android:background="@drawable/circle"
             android:backgroundTint="#FF4081"
             android:gravity="center"
-            android:text="🚍"
             android:textColor="@color/white"
-            android:textSize="48dp"
-            android:textStyle="bold" />
+            android:textSize="48dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -48,7 +47,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/username"
+                android:id="@+id/bus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="right"
@@ -72,7 +71,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/email"
+                android:id="@+id/capacity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="right"
@@ -100,6 +99,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="right"
+                android:numeric="decimal"
+                android:phoneNumber="false"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 tools:text="-" />
@@ -121,8 +122,7 @@
                 android:layout_marginBottom="30sp"
                 android:fontFamily="sans-serif-smallcaps"
                 android:hint="Top Up Amount"
-                android:inputType="number"
-                android:textStyle="bold" />
+                android:inputType="number" />
 
             <Button
                 android:id="@+id/topup"
@@ -139,6 +139,47 @@
                 android:textStyle="bold"
                 app:cornerRadius="30sp" />
         </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/renter_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Not registered"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/renter_status2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Registered"
+            android:textStyle="bold"
+            tools:visibility="gone" />
+
+        <Button
+            android:id="@+id/renter_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FF4081"
+            android:text="Register Company"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/renter_button2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FF4081"
+            android:text="Manage Bus"
+            android:textStyle="bold"
+            tools:visibility="gone" />
     </LinearLayout>
 
 </LinearLayout>
