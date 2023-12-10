@@ -1,0 +1,73 @@
+<!-- PaymentActivity layout -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#FEFE00"
+    android:backgroundTint="#FEFE00"
+    tools:context=".PaymentActivity">
+
+    <!-- Title TextView for the payment activity -->
+    <TextView
+        android:id="@+id/payment_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- TextView to display the bus name -->
+    <TextView
+        android:id="@+id/bus_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_marginBottom="8dp"/>
+
+    <!-- TextView to display the price details -->
+    <TextView
+        android:id="@+id/price_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_marginBottom="8dp"/>
+
+    <!-- TextView to display the departure date -->
+    <TextView
+        android:id="@+id/departure_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_marginBottom="8dp"/>
+
+    <!-- TextView to display the selected seat details -->
+    <TextView
+        android:id="@+id/selected_seat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_marginBottom="16dp"/>
+
+
+    <!-- Button to initiate the payment -->
+    <Button
+        android:id="@+id/pay_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FF4081"
+        android:text="Pay Now"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Button to cancel the booking -->
+    <Button
+        android:id="@+id/cancel_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FF4081"
+        android:text="Cancel Booking"
+        android:layout_marginTop="16dp"/>
+</LinearLayout>

@@ -9,9 +9,9 @@
     android:backgroundTint="#FEFE00"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".RegisterRenterActivity"> <!-- Add this line -->
-    <!-- Fill the linear layout with some components-->
+    tools:context=".RegisterRenterActivity"> <!-- Context attribute added for clarity -->
 
+    <!-- Form Section -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -20,6 +20,7 @@
         android:fadingEdge="horizontal"
         android:orientation="vertical">
 
+        <!-- Title -->
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
@@ -27,12 +28,14 @@
             android:text="Add Bus"
             android:textSize="34sp" />
 
+        <!-- Subtitle -->
         <TextView
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Add or edit bus" />
 
+        <!-- Bus Name Input -->
         <EditText
             android:id="@+id/bus"
             android:layout_width="match_parent"
@@ -42,6 +45,7 @@
             android:inputType="text"
             android:textStyle="bold" />
 
+        <!-- Capacity Input -->
         <EditText
             android:id="@+id/capacity"
             android:layout_width="match_parent"
@@ -51,6 +55,7 @@
             android:inputType="number"
             android:textStyle="bold" />
 
+        <!-- Price Input -->
         <EditText
             android:id="@+id/price"
             android:layout_width="match_parent"
@@ -59,15 +64,15 @@
             android:hint="Price"
             android:inputType="number"
             android:textStyle="bold" />
-
-
     </LinearLayout>
 
+    <!-- Dropdown Section -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="180dp"
         android:orientation="vertical">
 
+        <!-- Bus Type Dropdown -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -90,12 +95,14 @@
                 android:src="@drawable/baseline_directions_bus_24"
                 app:tint="@color/black" />
 
+            <!-- Bus Type Dropdown -->
             <Spinner
                 android:id="@+id/bus_type_dropdown"
                 android:layout_width="match_parent"
                 android:layout_height="48dp" />
         </LinearLayout>
 
+        <!-- Departure Dropdown -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -118,12 +125,14 @@
                 android:src="@drawable/baseline_home_24"
                 app:tint="@color/black" />
 
+            <!-- Departure Dropdown -->
             <Spinner
                 android:id="@+id/departure_dropdown"
                 android:layout_width="match_parent"
                 android:layout_height="48dp" />
         </LinearLayout>
 
+        <!-- Arrival Dropdown -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -146,6 +155,7 @@
                 android:src="@drawable/baseline_arrow_forward_24"
                 app:tint="@color/black" />
 
+            <!-- Arrival Dropdown -->
             <Spinner
                 android:id="@+id/arrival_dropdown"
                 android:layout_width="match_parent"
@@ -153,11 +163,13 @@
         </LinearLayout>
     </LinearLayout>
 
+    <!-- Checkbox Section -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="180dp"
         android:orientation="vertical">
 
+        <!-- AC, WiFi, Toilet Checkboxes -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -166,29 +178,30 @@
             android:orientation="horizontal"
             android:paddingHorizontal="3dp">
 
-            <!-- CheckBox for AC -->
-
-            <!-- CheckBox for WiFi -->
             <CheckBox
                 android:id="@+id/ac_checkbox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:buttonTint="#FF4081"
                 android:text="AC" />
 
             <CheckBox
                 android:id="@+id/wifi_checkbox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:buttonTint="#FF4081"
                 android:text="WiFi" />
 
-            <!-- CheckBox for WiFi -->
+            <!-- Toilet Checkbox -->
             <CheckBox
                 android:id="@+id/toilet_checkbox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Toilet" /><!-- CheckBox for WiFi -->
+                android:buttonTint="#FF4081"
+                android:text="Toilet" />
         </LinearLayout>
 
+        <!-- LCD, Coolbox, Lunch Checkboxes -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -197,23 +210,32 @@
             android:orientation="horizontal"
             android:paddingHorizontal="3dp">
 
+            <!-- LCD Checkbox -->
             <CheckBox
                 android:id="@+id/lcd_checkbox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="LCD" /><!-- CheckBox for WiFi -->
+                android:buttonTint="#FF4081"
+                android:text="LCD" />
+
+            <!-- Coolbox Checkbox -->
             <CheckBox
                 android:id="@+id/coolbox_checkbox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Coolbox" /><!-- CheckBox for WiFi -->
+                android:buttonTint="#FF4081"
+                android:text="Coolbox" />
+
+            <!-- Lunch Checkbox -->
             <CheckBox
                 android:id="@+id/lunch_checkbox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Lunch" /><!-- CheckBox for WiFi -->
+                android:buttonTint="#FF4081"
+                android:text="Lunch" />
         </LinearLayout>
 
+        <!-- Baggage, Electric Checkboxes -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -222,23 +244,27 @@
             android:orientation="horizontal"
             android:paddingHorizontal="3dp">
 
+            <!-- Baggage Checkbox -->
             <CheckBox
                 android:id="@+id/baggage_checkbox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Baggage" /><!-- CheckBox for WiFi -->
+                android:buttonTint="#FF4081"
+                android:text="Baggage" />
+
+            <!-- Electric Checkbox -->
             <CheckBox
                 android:id="@+id/electric_checkbox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:buttonTint="#FF4081"
                 android:text="Electric" />
 
             <!-- Add more CheckBox elements for other items -->
-
         </LinearLayout>
-
     </LinearLayout>
 
+    <!-- Add Button -->
     <Button
         android:id="@+id/add_button"
         android:layout_width="wrap_content"

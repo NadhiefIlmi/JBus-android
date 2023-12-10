@@ -9,9 +9,9 @@
     android:backgroundTint="#FEFE00"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".RegisterActivity"> <!-- Add this line -->
-    <!-- Fill the linear layout with some components-->
+    tools:context=".RegisterActivity"> <!-- Activity context -->
 
+    <!-- Title TextView with bus emoji -->
     <TextView
         android:id="@+id/title_text"
         android:layout_width="wrap_content"
@@ -25,6 +25,7 @@
         android:textStyle="normal|bold"
         android:visibility="visible" />
 
+    <!-- Title TextView for registration -->
     <TextView
         android:id="@+id/title"
         android:layout_width="match_parent"
@@ -39,6 +40,7 @@
         android:textSize="34sp"
         android:textStyle="bold" />
 
+    <!-- Description TextView -->
     <TextView
         android:id="@+id/description"
         android:layout_width="match_parent"
@@ -52,8 +54,7 @@
         android:textSize="16sp"
         android:textStyle="bold" />
 
-
-
+    <!-- Registration form layout -->
     <LinearLayout
         android:id="@+id/register_form"
         android:layout_width="match_parent"
@@ -62,18 +63,19 @@
         android:background="#00F4F6FB"
         android:fadingEdge="horizontal"
         android:orientation="vertical">
-        android:fontFamily="sans-serif-smallcaps"
 
+        <!-- Username EditText -->
         <EditText
             android:id="@+id/username"
             android:layout_width="match_parent"
             android:layout_height="60sp"
             android:layout_marginTop="20dp"
             android:fontFamily="sans-serif-smallcaps"
-            android:hint="username"
+            android:hint="Username"
             android:inputType="text"
             android:textStyle="bold" />
 
+        <!-- Email EditText -->
         <EditText
             android:id="@+id/email"
             android:layout_width="match_parent"
@@ -85,6 +87,7 @@
             android:inputType="textEmailAddress"
             android:textStyle="bold" />
 
+        <!-- Password EditText -->
         <EditText
             android:id="@+id/password"
             android:layout_width="match_parent"
@@ -94,6 +97,7 @@
             android:inputType="textPassword"
             android:textStyle="bold" />
 
+        <!-- Register Button -->
         <Button
             android:id="@+id/register_button"
             android:layout_width="match_parent"

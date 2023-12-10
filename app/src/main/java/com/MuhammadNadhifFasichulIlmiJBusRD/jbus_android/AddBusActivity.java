@@ -1,3 +1,10 @@
+/*
+ * File: AddBusActivity.java
+ * Author: Muhammad Nadhif Fasichul Ilmi
+ * Description: This class represents the Add Bus activity, allowing users to add new buses with specific details.
+ * Date: [Insert Date]
+ */
+
 package com.MuhammadNadhifFasichulIlmiJBusRD.jbus_android;
 
 import android.content.Context;
@@ -18,18 +25,22 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.MuhammadNadhifFasichulIlmiJBusRD.jbus_android.model.Account;
 import com.MuhammadNadhifFasichulIlmiJBusRD.jbus_android.model.BaseResponse;
 import com.MuhammadNadhifFasichulIlmiJBusRD.jbus_android.model.Bus;
-import com.MuhammadNadhifFasichulIlmiJBusRD.jbus_android.request.BaseApiService;
 import com.MuhammadNadhifFasichulIlmiJBusRD.jbus_android.model.BusType;
 import com.MuhammadNadhifFasichulIlmiJBusRD.jbus_android.model.Facility;
 import com.MuhammadNadhifFasichulIlmiJBusRD.jbus_android.model.Station;
+import com.MuhammadNadhifFasichulIlmiJBusRD.jbus_android.request.BaseApiService;
 import com.MuhammadNadhifFasichulIlmiJBusRD.jbus_android.request.UtilsApi;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ * The AddBusActivity class represents the Add Bus activity, allowing users to add new buses with specific details.
+ */
 public class AddBusActivity extends AppCompatActivity {
     private EditText busName, capacity, price;
     private BusType selectedBusType;
@@ -48,7 +59,6 @@ public class AddBusActivity extends AppCompatActivity {
     private Context mContext;
     private Button addButton = null;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,7 +69,6 @@ public class AddBusActivity extends AppCompatActivity {
         initBusType();
 
         // Initialize UI components
-
         busName = findViewById(R.id.bus);
         capacity = findViewById(R.id.capacity);
         price  = findViewById(R.id.price);
@@ -81,7 +90,6 @@ public class AddBusActivity extends AppCompatActivity {
 
         addButton = findViewById(R.id.add_button);
         addButton.setOnClickListener(v -> handleAdd());
-
     }
 
     private void checkFacilities() {
@@ -168,7 +176,6 @@ public class AddBusActivity extends AppCompatActivity {
 
                     departureSpinner.setOnItemSelectedListener(deptOISL);
                     arrivalSpinner.setOnItemSelectedListener(arrOISL);
-
                 }
             }
 
@@ -184,13 +191,14 @@ public class AddBusActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 ((TextView) parent.getChildAt(0)).setTextColor(Color.BLACK);
-// mengisi field selectedBusType sesuai dengan item yang dipilih
                 selectedBusType = busType[position];
             }
+
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
             }
         };
+
         // Initialize Spinner for BusType
         busTypeSpinner = findViewById(R.id.bus_type_dropdown);
         ArrayAdapter<BusType> busTypeAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, busType);
@@ -201,33 +209,34 @@ public class AddBusActivity extends AppCompatActivity {
 
     protected void handleAdd() {
         checkFacilities();
-// handling empty field
+
+        // Handling empty fields
         String busNameS = busName.getText().toString();
         String capacityS = capacity.getText().toString();
         String priceS = price.getText().toString();
         if (busNameS.isEmpty() || capacityS.isEmpty() || priceS.isEmpty()) {
-            Toast.makeText(mContext, "Field cannot be empty",
-                    Toast.LENGTH_SHORT).show();
+            Toast.makeText(mContext, "Field cannot be empty", Toast.LENGTH_SHORT).show();
             return;
         }
+
         int capacity = Integer.parseInt(capacityS);
         int price = Integer.parseInt(priceS);
 
         Account loggedAccount = LoginActivity.loggedAccount;
-
         int id = loggedAccount.id;
 
         mApiService.create(id, busNameS, capacity, selectedFacilities, selectedBusType, price, selectedDeptStationID, selectedArrStationID).enqueue(new Callback<BaseResponse<Bus>>() {
             @Override
             public void onResponse(Call<BaseResponse<Bus>> call, Response<BaseResponse<Bus>> response) {
-// handle the potential 4xx & 5xx error
+                // Handle potential 4xx & 5xx errors
                 if (!response.isSuccessful()) {
-                    Toast.makeText(mContext, "Application error " +
-                            response.code(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(mContext, "Application error " + response.code(), Toast.LENGTH_SHORT).show();
                     return;
                 }
+
                 BaseResponse<Bus> res = response.body();
-// if success finish this activity (back to login activity)
+
+                // If success finish this activity (back to login activity)
                 if (res.success) {
                     finish();
                     Toast.makeText(AddBusActivity.this, "Add bus berhasil", Toast.LENGTH_SHORT).show();
@@ -235,12 +244,11 @@ public class AddBusActivity extends AppCompatActivity {
                     Toast.makeText(mContext, res.message, Toast.LENGTH_SHORT).show();
                 }
             }
+
             @Override
             public void onFailure(Call<BaseResponse<Bus>> call, Throwable t) {
-                Toast.makeText(mContext, "Problem with the server",
-                        Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, "Problem with the server", Toast.LENGTH_SHORT).show();
             }
         });
     }
-
 }

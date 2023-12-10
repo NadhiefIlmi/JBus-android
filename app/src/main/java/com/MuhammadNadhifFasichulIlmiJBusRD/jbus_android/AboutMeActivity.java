@@ -1,3 +1,11 @@
+/*
+ * File: AboutMeActivity.java
+ * Author: Muhammad Nadhif Fasichul Ilmi
+ * Description: This class represents the About Me activity, displaying user account information
+ *              and providing functionality for top-up and company registration.
+ * Date: [Insert Date]
+ */
+
 package com.MuhammadNadhifFasichulIlmiJBusRD.jbus_android;
 
 import android.annotation.SuppressLint;
@@ -21,7 +29,12 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ * The AboutMeActivity class represents the About Me activity, displaying user account information
+ * and providing functionality for top-up and company registration.
+ */
 public class AboutMeActivity extends AppCompatActivity {
+
     private Button topupButton = null;
     private Button renterButton = null;
     private TextView renterStatus = null;
@@ -42,7 +55,7 @@ public class AboutMeActivity extends AppCompatActivity {
 
         // Initialize components
         TextView usernameTextView = findViewById(R.id.bus);
-        TextView emailTextView = findViewById(R.id.capacity);
+        TextView emailTextView = findViewById(R.id.email);
         TextView balanceTextView = findViewById(R.id.balance);
 
         // Set the account data
@@ -85,7 +98,6 @@ public class AboutMeActivity extends AppCompatActivity {
             moveActivity(this, ManageBusActivity.class);
             viewToast(this, "Manage bus anda");
         });
-
     }
 
     @Override
@@ -104,15 +116,32 @@ public class AboutMeActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Moves to another activity.
+     *
+     * @param ctx The current context.
+     * @param cls The target activity class.
+     */
     private void moveActivity(Context ctx, Class<?> cls) {
         Intent intent = new Intent(ctx, cls);
         startActivity(intent);
     }
 
+    /**
+     * Displays a short toast message.
+     *
+     * @param ctx     The current context.
+     * @param message The message to be displayed.
+     */
     private void viewToast(Context ctx, String message) {
         Toast.makeText(ctx, message, Toast.LENGTH_SHORT).show();
     }
 
+    /**
+     * Handles the top-up functionality.
+     *
+     * @param view The current view.
+     */
     public void handleTopup(View view) {
         // Get the amount from the EditText
         EditText amountEditText = findViewById(R.id.topup_amount);
@@ -169,5 +198,4 @@ public class AboutMeActivity extends AppCompatActivity {
             }
         });
     }
-
 }

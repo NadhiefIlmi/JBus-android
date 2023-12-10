@@ -18,6 +18,10 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ * Activity for user login.
+ * This class is responsible for handling user login functionality.
+ */
 public class LoginActivity extends AppCompatActivity {
 
     // Define the variables
@@ -29,6 +33,14 @@ public class LoginActivity extends AppCompatActivity {
     private Context mContext;
     private EditText emailEditText, passwordEditText;
 
+    /**
+     * Called when the activity is starting.
+     *
+     * @param savedInstanceState If the activity is being re-initialized after previously being
+     *                           shut down, then this Bundle contains the data it most recently
+     *                           supplied in onSaveInstanceState.
+     *                           Note: Otherwise, it is null.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,7 +61,6 @@ public class LoginActivity extends AppCompatActivity {
             viewToast(this, "Selamat datang");
         });
 
-
         mContext = this;
         mApiService = UtilsApi.getApiService();
 
@@ -60,15 +71,30 @@ public class LoginActivity extends AppCompatActivity {
         loginButton.setOnClickListener(v -> handleLogin());
     }
 
+    /**
+     * Move to another activity.
+     *
+     * @param ctx The context from which the activity is launched.
+     * @param cls The component class that is to be used for the intent.
+     */
     private void moveActivity(Context ctx, Class<?> cls) {
         Intent intent = new Intent(ctx, cls);
         startActivity(intent);
     }
 
+    /**
+     * Display a toast message.
+     *
+     * @param ctx     The context from which the toast should be displayed.
+     * @param message The message to show in the toast.
+     */
     private void viewToast(Context ctx, String message) {
         Toast.makeText(ctx, message, Toast.LENGTH_SHORT).show();
     }
 
+    /**
+     * Handle the login process.
+     */
     protected void handleLogin() {
         String emailStr = emailEditText.getText().toString();
         String passwordStr = passwordEditText.getText().toString();
@@ -105,5 +131,4 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
-
 }
