@@ -53,3 +53,14 @@ For Bus renter:
 ## Contributing
 
 This is a personal project. Therefore, pull requests will not be accepted. You are welcome to fork this repository and modify it according to your needs.
+
+![image](https://github.com/NadhiefIlmi/JBus-android/assets/144330117/08e07cb3-1fc9-4280-9bf5-91dd37d19751)
+![image](https://github.com/NadhiefIlmi/JBus-android/assets/144330117/ab9d6436-efdd-4bd2-a18c-790e596422dc)
+![image](https://github.com/NadhiefIlmi/JBus-android/assets/144330117/5afd26ff-fe59-4525-8190-13c3ffe43cd1)
+![image](https://github.com/NadhiefIlmi/JBus-android/assets/144330117/8d798769-b5bf-4612-b466-92fccf31cb33)
+![image](https://github.com/NadhiefIlmi/JBus-android/assets/144330117/a1cbb1a8-ea04-49fa-9c0a-d0aad846ca04)
+![image](https://github.com/NadhiefIlmi/JBus-android/assets/144330117/166613a7-4da9-4af4-821b-dacd84f6f371)
+![image](https://github.com/NadhiefIlmi/JBus-android/assets/144330117/a0f34954-9974-4b24-a7f8-ab7213e0ab22)
+![image](https://github.com/NadhiefIlmi/JBus-android/assets/144330117/92a1b215-307c-4dfb-985c-0508b039b7da)
+![image](https://github.com/NadhiefIlmi/JBus-android/assets/144330117/ceeb4efc-b78b-4291-93e1-31e2a013d8e4)
+![image](https://github.com/NadhiefIlmi/JBus-android/assets/144330117/b16d9cb6-09f3-42b5-b31e-e01a8beb00e3)
